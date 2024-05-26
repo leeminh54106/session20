@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 10px 50px;
+    }
+
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .display-modal {
+        display: block;
+    }
+
+    /* Bai 3 */
+    .group {
+        margin-top: 40px;
+        width: 400px;
+        border: 1px solid #ccc;
+    }
+
+    .inner {
+        margin: 10px;
+        border-radius: 5px;
+        background-color: #98fc98;
+    }
+
+    .title {
+        font-size: 20px;
+        color: #000;
+        padding: 5px 0 0 5px;
+        margin-bottom: 10px;
+    }
+
+    .desc {
+        font-size: 15px;
+        color: #000;
+        padding: 10px 0 0 5px;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .vuong1,
+    .vuong2,
+    .vuong3 {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        border: 1px solid #777;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .vuong1 {
+        background-color: #f0e68c;
+    }
+
+    .vuong2 {
+        background-color: #296e29;
+    }
+
+    .vuong3 {
+        background-color: #c0c0c0;
+    }
+
+    .wrapper {
+        margin-top: 40px;
+        width: 400px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .heading {
+        margin: 10px 0 15px 0;
+    }
+
+    .text-title {
+        margin: 10px 0 12px 0;
+    }
+
+    .text-link {
+        border-bottom: 1px dashed #000;
+        text-decoration: none;
+        line-height: 20px;
+        color: #000;
+    }
+
+    /* Bai 5 */
+    .app_inner {
+        margin-top: 40px;
+        width: 500px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .app_group {
+        margin: 10px;
+        border-radius: 5px;
+        background-color: #000;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    .app_head {
+
+        font-size: 20px;
+        padding: 30px 0 0 5px;
+        margin-bottom: 10px;
+    }
+
+    .app_title {
+        font-size: 15px;
+        padding: 5px 0 0 5px;
+        margin-bottom: 10px;
+    }
+
+    .btn-app {
+        border: 1px solid #000;
+        padding: 9px 20px;
+        border-radius: 5px;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .app_dark {
+        background-color: #fff;
+        color: #000;
+    }
+</style>
+
+<body>
+    <div class="div">
+        This is a text. This is a text. This is a text.
+    </div>
+    <button id="hideText">Hide text</button>
+    <button id="showText">Show text</button>
+    <br>
+    <!-- Bài 2 -->
+    <h3>Modal Examle</h3>
+    <button id="openBtn">Open Modal</button>
+    <div class="modal" id="openModal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+    <!-- Bài 3 -->
+    <div class="group">
+        <div class="inner" id="outer">
+            <h3 class="title">Change background color</h3>
+            <p class="desc">Mouse over the squares!</p>
+            <div class="container">
+                <div class="vuong vuong1" onmouseover="backGroundBlock(this)" onmouseout="backGroundNone(this)"></div>
+                <div class="vuong vuong2" onmouseover="backGroundBlock(this)" onmouseout="backGroundNone(this)"></div>
+                <div class="vuong vuong3" onmouseover="backGroundBlock(this)" onmouseout="backGroundNone(this)"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Bai 4 -->
+    <div class="wrapper">
+        <h2 class="heading">Tooltip</h2>
+        <div class="text-title">
+            Xin chào các bạn mời các bạn đến Trang web
+        </div>
+        <a href="" class="text-link" onmouseover="showTooltip()" onmouseout="hideTooltip()">
+            Hover over me
+        </a>
+    </div>
+
+    <!-- Bài 5 -->
+    <div class="app_inner">
+        <div class="app_group" id="bgGroup">
+            <h3 class="app_head">Toggle Dark/Light Mode</h3>
+            <div class="app_title">
+                Click the button to toggle between dark and light mode for this page.
+            </div>
+            <button class="btn-app" id="toggle-button"> Toggle dark mode</button>
+        </div>
+    </div>
+    <script src="./Bai1.js"></script>
+</body>
+
+</html>
